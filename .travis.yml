@@ -21,21 +21,17 @@ matrix:
   - os: linux
     arch: ppc64le
     compiler: gcc
-    if: type == cron
   - os: linux
     arch: arm64
     compiler: gcc
-    if: type == cron
+  - os: linux
+    arch: s390x
+    compiler: gcc
   - os: linux
     arch: arm64-graviton2
     group: edge
     virt: vm
     compiler: gcc
-    if: type == cron
-  - os: linux
-    arch: s390x
-    compiler: gcc
-    if: type == cron
 
 install:
   - scripts/build-vtest.sh
